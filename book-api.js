@@ -21,7 +21,6 @@ app.use(bodyParser.json())
 
 app.post("/book",(req,res)=>{
     const book = req.body;
-     
     //for debugging purpose
     console.log(book)
     books.push(book);
@@ -29,8 +28,9 @@ app.post("/book",(req,res)=>{
     res.send('Book is added to the database');
 })
 
-
-
+app.get('/books',(req,res)=>{
+    res.json(books);
+})
 
 
 
